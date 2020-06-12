@@ -1,0 +1,2 @@
+# js-palindrome
+Palindrome detector
