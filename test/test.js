@@ -27,9 +27,10 @@ describe("Phrase", function() {
   });
 
   describe("#letters", function() {
-    it("Converts given string to letters only")
-    let punctuatedString = new Phrase("Madam, I'm Adam.");
+    it("Converts given string to letters only", function() {
+      let punctuatedString = new Phrase("Madam, I'm Adam.");
     assert.strictEqual(punctuatedString.letters(), "MadamImAdam");
+    });
   });
 
 });

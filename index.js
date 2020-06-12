@@ -11,8 +11,8 @@ String.prototype.reverse = function reverse() {
 
 function Phrase(content) {
   this.content = content;
-  this.processor = function(string) {
-    return string.toLowerCase();
+  this.processor = function() {
+    return this.letters().toLowerCase();
   }
 
   // Returns content processed for palindrome testing,
@@ -26,8 +26,12 @@ function Phrase(content) {
   }
 
   this.letters = function letters() {
-    return this.content;
+    let theLetters = [];
+    for (let i = 0; i < this.content.length; i++) {
+      if (this.content.charAt(i).match(/[a-zA-Z]+/g)) {
+        theLetters.push(this.content.charAt(i));
+      }
+    }
+    return theLetters.join("");
   }
-
-
 }
