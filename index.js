@@ -24,3 +24,4 @@ function Phrase(content) {
   this.palindrome = function palindrome() {
     return this.processedContent() === this.processedContent().reverse();  // returns result of this comparison
   }
+}
