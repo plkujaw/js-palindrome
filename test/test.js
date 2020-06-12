@@ -17,9 +17,19 @@ describe("Phrase", function() {
 
     it("Returns true for a mixed-case palindrome", function() {
       let mixedCasePalindrome = new Phrase("RaceCar");
-      assert(mixedCasePalindrome.palindrome())
-    })
+      assert(mixedCasePalindrome.palindrome());
+    });
 
-    it("Returns true for a palindrome with punctuation")
+    it("Returns true for a palindrome with punctuation", function() {
+      let punctuatedPalindrome = new Phrase("Madam, I'm Adam.");
+      assert(punctuatedPalindrome.palindrome());
+    });
   });
+
+  describe("#letters", function() {
+    it("Converts given string to letters only")
+    let punctuatedString = new Phrase("Madam, I'm Adam.");
+    assert.strictEqual(punctuatedString.letters(), "MadamImAdam");
+  });
+
 });
