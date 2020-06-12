@@ -15,7 +15,10 @@ describe("Phrase", function() {
       assert(plainPalindrome.palindrome());
     });
 
-    it("Returns true for a mixed-case palindrome")
+    it("Returns true for a mixed-case palindrome", function() {
+      let mixedCasePalindrome = new Phrase("RaceCar");
+      assert(mixedCasePalindrome.palindrome())
+    })
 
     it("Returns true for a palindrome with punctuation")
   });
