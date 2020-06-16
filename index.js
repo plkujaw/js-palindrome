@@ -12,16 +12,8 @@ function Phrase(content) {
   this.content = content;
 
   this.letters = function letters() {
-    const letterRegex = /[a-z]/gi;
-    return Array.from(this.content).filter(character => character.match(letterRegex)).join("");
-    
-    // let theLetters = [];
-    // Array.from(this.content).forEach(function(character) {
-    //   if (character.match(letterRegex)) {
-    //     theLetters.push(character);
-    //   }
-    // });
-    // return theLetters.join("");
+    return (this.content.match(/[a-z]/gi) || []).join("");
+    // we use || [] because match returns null if there is no match and throws an error
   }
 
   this.processor = function() {
