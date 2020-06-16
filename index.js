@@ -1,6 +1,5 @@
 module.exports = Phrase;
 
-
 // Adds 'reverse' to all strings.
 
 String.prototype.reverse = function reverse() {
@@ -11,6 +10,17 @@ String.prototype.reverse = function reverse() {
 
 function Phrase(content) {
   this.content = content;
+
+  this.letters = function letters() {
+    let theLetters = [];
+    for (let i = 0; i < this.content.length; i++) {
+      if (this.content.charAt(i).match(/[a-zA-Z]/g)) {
+        theLetters.push(this.content.charAt(i));
+      }
+    }
+    return theLetters.join("");
+  }
+
   this.processor = function() {
     return this.letters().toLowerCase();
   }
@@ -25,13 +35,4 @@ function Phrase(content) {
     return this.processedContent() === this.processedContent().reverse();  // returns result of this comparison
   }
 
-  this.letters = function letters() {
-    let theLetters = [];
-    for (let i = 0; i < this.content.length; i++) {
-      if (this.content.charAt(i).match(/[a-zA-Z]+/g)) {
-        theLetters.push(this.content.charAt(i));
-      }
-    }
-    return theLetters.join("");
-  }
 }
