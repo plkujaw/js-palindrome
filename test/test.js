@@ -24,13 +24,20 @@ describe("Phrase", function() {
       let punctuatedPalindrome = new Phrase("Madam, I'm Adam.");
       assert(punctuatedPalindrome.palindrome());
     });
+
   });
 
   describe("#letters", function() {
     it("Converts given string to letters only", function() {
       let punctuatedString = new Phrase("Madam, I'm Adam.");
-    assert.strictEqual(punctuatedString.letters(), "MadamImAdam");
+      assert.strictEqual(punctuatedString.letters(), "MadamImAdam");
     });
+
+    it("Returns the empty string when no match", function(){
+      let noLetters = new Phrase("123.456");
+      assert.strictEqual(noLetters.letters(), "");
+    });
+
   });
 
 });
