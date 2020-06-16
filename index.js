@@ -13,7 +13,7 @@ function Phrase(content) {
 
   this.letters = function letters() {
     let theLetters = [];
-    const letterRegex = /[a-zA-Z]/g;
+    const letterRegex = /[a-z]/gi;
     for (let i = 0; i < this.content.length; i++) {
       let character = this.content.charAt(i);
       if (character.match(letterRegex)) {
