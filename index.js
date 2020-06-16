@@ -12,14 +12,16 @@ function Phrase(content) {
   this.content = content;
 
   this.letters = function letters() {
-    let theLetters = [];
     const letterRegex = /[a-z]/gi;
-    Array.from(this.content).forEach(function(character) {
-      if (character.match(letterRegex)) {
-        theLetters.push(character);
-      }
-    });
-    return theLetters.join("");
+    return Array.from(this.content).filter(character => character.match(letterRegex)).join("");
+    
+    // let theLetters = [];
+    // Array.from(this.content).forEach(function(character) {
+    //   if (character.match(letterRegex)) {
+    //     theLetters.push(character);
+    //   }
+    // });
+    // return theLetters.join("");
   }
 
   this.processor = function() {
