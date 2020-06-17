@@ -1,2 +1,1 @@
-# js-palindrome
-Palindrome detector
+### Palindrome detector engine (module)
